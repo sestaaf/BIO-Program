@@ -110,21 +110,21 @@ namespace BIO_Program
 
 											if (ageOneVisitor < 5 || ageOneVisitor > 100)
 											{
-												Console.WriteLine($"\nBesökare {i} är {ageOneVisitor} och går GRATIS på Bio!");
+												Console.WriteLine($"\nBesökare {i} är {ageOneVisitor} år och går GRATIS på Bio!");
 											}
 											else if (ageOneVisitor < 20)
 											{
-												Console.WriteLine($"\nBesökare {i} är {ageOneVisitor} och har Ungdomspris: 80 kr.");
+												Console.WriteLine($"\nBesökare {i} är {ageOneVisitor} år och har Ungdomspris: 80 kr.");
 												sumTickets += ticketPrice;
 											}
 											else if (ageOneVisitor > 64)
 											{
-												Console.WriteLine($"\nBesökare {i} är {ageOneVisitor} och har Pensionärspris: 90 kr.");
+												Console.WriteLine($"\nBesökare {i} är {ageOneVisitor} år och har Pensionärspris: 90 kr.");
 												sumTickets += ticketPrice;
 											}
 											else
 											{
-												Console.WriteLine($"\nBesökare {i} är {ageOneVisitor} och har Standardpris: 120 kr.");
+												Console.WriteLine($"\nBesökare {i} är {ageOneVisitor} år och har Standardpris: 120 kr.");
 												sumTickets += ticketPrice;
 											}
 											sumVisitors++;
