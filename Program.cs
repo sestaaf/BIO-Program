@@ -6,19 +6,19 @@ namespace BIO_Program
 	{
 		static void Main(string[] args)
 		{
-			bool klart1 = false;
-			bool klart2 = false;
 			string input = "";
+			bool klart1 = false;
 			bool test = false;
 			int ageOneVisitor = 0;
 			int numberOfVisitors = 0;
 
 			do
 			{
-				Console.WriteLine("BIO-MENY");
+
+				Console.WriteLine("HUVUDMENY");
 				Console.WriteLine("============================");
 				Console.WriteLine("Välj ett alternativ (1 - 3):\n\n");
-				Console.WriteLine("1 Biljetter.");
+				Console.WriteLine("1 BIO-Biljetter.");
 				Console.WriteLine("2 Text x 10.");
 				Console.WriteLine("3 Lek med ord.");
 				Console.WriteLine("\nQ Avslutar Meny.");
@@ -30,9 +30,11 @@ namespace BIO_Program
 				{
 					case "1":
 
+						bool klart2 = false;
+
 						do
 						{
-							Console.WriteLine("BIO-UNDERMENY");
+							Console.WriteLine("UNDERMENY BIO-Biljetter");
 							Console.WriteLine("============================");
 							Console.WriteLine("Välj ett alternativ (1 - 2):\n\n");
 							Console.WriteLine("1 En person.");
@@ -56,11 +58,11 @@ namespace BIO_Program
 									else
 									{
 										if (ageOneVisitor < 5 || ageOneVisitor > 100) Console.WriteLine("\nBiobesöket är GRATIS! Välkommen.");
-										else if (ageOneVisitor < 20) Console.WriteLine("\nUngdomspris: 80 kr.");
-										else if (ageOneVisitor > 64) Console.WriteLine("\nPensionärspris: 90 kr.");
+										else if (ageOneVisitor < 20) Console.WriteLine("\nUngdomspris: 80 kr, Välkommen.");
+										else if (ageOneVisitor > 64) Console.WriteLine("\nPensionärspris:  90 kr, Välkommen.");
 										else Console.WriteLine("\nStandardpris: 120 kr.");
 										Console.ReadLine();
-										klart1 = true;
+										test = true;
 									}
 									break;
 
@@ -84,7 +86,9 @@ namespace BIO_Program
 
 										for (int i = 1; i < numberOfVisitors + 1; i++)
 										{
+
 											bool klart3 = false;
+
 											do
 											{
 												Console.Write($"\nÅlder besökare {i}? ");
@@ -106,36 +110,33 @@ namespace BIO_Program
 
 											if (ageOneVisitor < 5 || ageOneVisitor > 100)
 											{
-												Console.WriteLine($"\nBesökare {i} är {ageOneVisitor} och går GRATIS på Bio! Välkommen.");
+												Console.WriteLine($"\nBesökare {i} är {ageOneVisitor} och går GRATIS på Bio!");
 											}
 											else if (ageOneVisitor < 20)
 											{
-												Console.WriteLine($"\nBesökare {i} är {ageOneVisitor} och har Ungdomspris: 80 kr, Välkommen.");
+												Console.WriteLine($"\nBesökare {i} är {ageOneVisitor} och har Ungdomspris: 80 kr.");
 												sumTickets += ticketPrice;
 											}
 											else if (ageOneVisitor > 64)
 											{
-												Console.WriteLine($"\nBesökare {i} är {ageOneVisitor} och har Pensionärspris: 90 kr, Välkommen.");
+												Console.WriteLine($"\nBesökare {i} är {ageOneVisitor} och har Pensionärspris: 90 kr.");
 												sumTickets += ticketPrice;
 											}
 											else
 											{
-												Console.WriteLine($"\nBesökare {i} är {ageOneVisitor} och har Standardpris: 120 kr, Välkommen.");
+												Console.WriteLine($"\nBesökare {i} är {ageOneVisitor} och har Standardpris: 120 kr.");
 												sumTickets += ticketPrice;
 											}
 											sumVisitors++;
 										}
-										Console.WriteLine($"\nNi är {sumVisitors} personer och den totala kostnaden är {sumTickets} kr.");
+										Console.WriteLine($"\nNi är {sumVisitors} personer och den totala kostnaden är {sumTickets} kr. Välkomna!");
 										Console.ReadLine();
-										klart2 = true;
 									}
 									break;
 								case "Q":
-									klart1 = true;
 									klart2 = true;
 									break;
 								case "q":
-									klart1 = true;
 									klart2 = true;
 									break;
 								default:
