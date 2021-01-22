@@ -199,26 +199,38 @@ namespace BIO_Program
 
 							string[] mening = input.Split(' ', input.Length);
 
-							for (int k = 0; k < 3; k++)
+							if (mening.Length == 3)
 							{
-								if (String.IsNullOrWhiteSpace(mening[k]))
+								for (int k = 0; k < mening.Length; k++)
 								{
-									Console.WriteLine("Fattas ett eller flera ord!\n");
-									klart3 = true;
-									break;
+									if (String.IsNullOrWhiteSpace(mening[k]))
+									{
+										Console.WriteLine("\nFattas ett eller flera ord!\n");
+										klart3 = true;
+										break;
+									}
+									else
+									{
+										if (input.EndsWith('.'))
+										{
+											output = mening[2].Remove(mening[2].LastIndexOf('.'));
+										}
+									}
 								}
-							}	
 
-							if (input.EndsWith('.'))
-							{
-								output = mening[2].Remove(mening[2].LastIndexOf('.'));
+								output = mening[2];
+
+								Console.WriteLine($"\nTredje ordet är \"{output}\".");
+								Console.WriteLine();
+								klart3 = true;
 							}
 
-							output = mening[2];
-
-							Console.WriteLine($"\nTredje ordet är \"{output}\".");
-							Console.WriteLine();
-							klart3 = true;
+							else
+							{
+								Console.WriteLine("Fattas ett eller flera ord!\n");
+								klart3 = true;
+								break;
+							}
 
 						} while (!klart3);
 						
